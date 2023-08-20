@@ -1,6 +1,7 @@
 package com.genka.cleancommerce.domain.product;
 
 import com.genka.cleancommerce.domain.address.Address;
+import com.genka.cleancommerce.domain.category.Category;
 
 import java.util.List;
 import java.util.Objects;
@@ -8,7 +9,7 @@ import java.util.UUID;
 
 public class Product {
     private UUID id;
-    private List<ProductCategory> categories;
+    private List<Category> categories;
     private String description;
     private Double price;
     private Address stockAddress;
@@ -18,7 +19,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(UUID id, List<ProductCategory> categories, String description, Double price, Address stockAddress, Integer stockQuantity, String title) {
+    public Product(UUID id, List<Category> categories, String description, Double price, Address stockAddress, Integer stockQuantity, String title) {
         this.id = id;
         this.categories = categories;
         this.description = description;
@@ -28,7 +29,7 @@ public class Product {
         this.title = title;
     }
 
-    public Product(List<ProductCategory> categories, String description, Double price, Address stockAddress, Integer stockQuantity, String title) {
+    public Product(List<Category> categories, String description, Double price, Address stockAddress, Integer stockQuantity, String title) {
         this.categories = categories;
         this.description = description;
         this.price = price;
@@ -45,11 +46,11 @@ public class Product {
         this.id = id;
     }
 
-    public List<ProductCategory> getCategories() {
+    public List<Category> getCategories() {
         return categories;
     }
 
-    public void setCategories(List<ProductCategory> categories) {
+    public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
 
