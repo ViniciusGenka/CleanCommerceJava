@@ -11,9 +11,7 @@ public record AddUserAddressInput(
         String neighborhood,
         String postalCode,
         String state,
-        AddressStatus status,
         String street,
-        Integer streetNumber,
-        AddressType type
+        Integer streetNumber
 ) {
 }

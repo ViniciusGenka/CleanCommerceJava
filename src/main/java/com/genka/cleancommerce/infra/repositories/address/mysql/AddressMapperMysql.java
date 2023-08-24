@@ -23,7 +23,7 @@ public class AddressMapperMysql {
 
     public static Address schemaToEntity(AddressSchemaMysql addressSchema) {
         return new Address(
-                null,
+                addressSchema.getId(),
                 addressSchema.getUserId(),
                 addressSchema.getCity(),
                 addressSchema.getComplement(),
