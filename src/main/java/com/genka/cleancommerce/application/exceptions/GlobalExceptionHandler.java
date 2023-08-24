@@ -14,4 +14,16 @@ public class GlobalExceptionHandler {
         ErrorDetails errorDetails = new ErrorDetails(HttpStatus.NOT_FOUND, ex.getMessage());
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(CredentialAlreadyInUseException.class)
+    public ResponseEntity<ErrorDetails> credentialAlreadyInUseException(CredentialAlreadyInUseException ex, HttpServletRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(HttpStatus.CONFLICT, ex.getMessage());
+        return new ResponseEntity<>(errorDetails, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorDetails> illegalArgumentException(IllegalArgumentException ex, HttpServletRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(HttpStatus.BAD_REQUEST, ex.getMessage());
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+    }
 }
